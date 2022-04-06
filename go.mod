@@ -17,13 +17,11 @@ require (
 	github.com/spf13/viper v1.12.0
 	github.com/swaggo/http-swagger v1.2.8
 	github.com/swaggo/swag v1.8.2
+	go.opentelemetry.io/contrib/detectors/aws/ecs v1.7.0
 	go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux v0.32.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace v0.32.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.32.0
 	go.opentelemetry.io/contrib/propagators/aws v1.7.0
-	go.opentelemetry.io/contrib/propagators/b3 v1.7.0
-	go.opentelemetry.io/contrib/propagators/jaeger v1.7.0
-	go.opentelemetry.io/contrib/propagators/ot v1.7.0
 	go.opentelemetry.io/otel v1.7.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.7.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.7.0

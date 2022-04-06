@@ -45,7 +45,12 @@ func (s *Server) echoHandler(w http.ResponseWriter, r *http.Request) {
 			go func(index int, backend string) {
 				defer wg.Done()
 
-				ctx = httptrace.WithClientTrace(ctx, otelhttptrace.NewClientTrace(ctx))
+				ctx = httptrace.WithClientTrace(
+					ctx,
+					otelhttptrace.NewClientTrace(
+						ctx,
+						otelhttptrace.WithoutSubSpans(),
+						otelhttptrace.WithTracerProvider(s.tracerProvider)))
 				ctx, cancel := context.WithTimeout(ctx, s.config.HttpClientTimeout)
 				defer cancel()
 
