@@ -44,8 +44,8 @@ func (s *Server) initTracer(ctx context.Context) {
 		sdktrace.WithResource(resource.NewWithAttributes(
 			semconv.SchemaURL,
 			semconv.ServiceNameKey.String(viper.GetString("otel-service-name")),
-			semconv.ServiceVersionKey.String(version.VERSION),
-		)),
+			semconv.ServiceVersionKey.String(version.VERSION))),
+		sdktrace.WithIDGenerator(xray.NewIDGenerator()),
 	)
 
 	otel.SetTracerProvider(s.tracerProvider)
